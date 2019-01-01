@@ -2,23 +2,17 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-// Is the current build a development build
-const IS_DEV = (process.env.NODE_ENV === 'dev');
-
 const dirNode = 'node_modules';
 const dirApp = path.join(__dirname, 'app');
 const dirAssets = path.join(__dirname, 'assets');
 
-const appHtmlTitle = 'Webpack Boilerplate';
+const html = {
+    "title" : "Writing Scalable, Modular and Themeable CSS with SASS Exercises",
+    "welcome" : "What a crazy CSS day!"
+}
 
-/**
- * Webpack Configuration
- */
 module.exports = {
     entry: {
-        vendor: [
-            'lodash'
-        ],
         bundle: path.join(dirApp, 'index')
     },
     resolve: {
@@ -29,13 +23,10 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.DefinePlugin({
-            IS_DEV: IS_DEV
-        }),
-
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'index.ejs'),
-            title: appHtmlTitle
+            title: html.title,
+            welcome : html.welcome
         })
     ],
     module: {
@@ -58,7 +49,7 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            sourceMap: IS_DEV
+                            sourceMap: true
                         }
                     },
                 ]
@@ -72,13 +63,13 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            sourceMap: IS_DEV
+                            sourceMap: true
                         }
                     },
                     {
                         loader: 'sass-loader',
                         options: {
-                            sourceMap: IS_DEV,
+                            sourceMap: true,
                             includePaths: [dirAssets]
                         }
                     }

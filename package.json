@@ -1,7 +1,7 @@
 {
   "name": "webpack-boilerplate",
   "version": "4.0.0",
-  "description": "Plain webpack 4 Boilerplate with Babel, SASS and lodash on board",
+  "description": "Plain webpack 4 Boilerplate with Babel, SASS",
   "author": "Christoph von Gellhorn",
   "license": "MIT",
   "homepage": "https://github.com/cvgellhorn/webpack-boilerplate",
@@ -11,10 +11,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://cvgellhorn@github.com/cvgellhorn/webpack-boilerplate.git"
+    "url": "https://github.com/cpeker/webpack-boilerplate.git"
   },
   "dependencies": {
-    "lodash": "4.17.11"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",

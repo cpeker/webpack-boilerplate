@@ -1,8 +1,3 @@
-@import "test";
-
-html {
-    box-sizing: border-box;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
-}
+@import "abstracts/_abstracts-dir";
+@import "base/_base-dir";
+@import "vendor/_vendor-dir";

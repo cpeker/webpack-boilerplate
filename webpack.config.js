@@ -39,6 +39,10 @@ module.exports = {
             filename : "theme-example.html",
             template: path.join(__dirname, 'pages/theme-example.html')
         }),
+        new HtmlWebpackPlugin({
+            filename : "playground.html",
+            template: path.join(__dirname, 'pages/playground.html')
+        }),
     ],
     module: {
         rules: [

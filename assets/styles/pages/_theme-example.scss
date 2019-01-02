@@ -1,0 +1,8 @@
+.theme {
+
+    button {
+        font-size: 4em;
+        @include color("background", "button__background");
+        @include color("color", "button__color");
+    }
+}

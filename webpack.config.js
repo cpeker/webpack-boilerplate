@@ -32,8 +32,12 @@ module.exports = {
             welcome : html.welcome
         }), 
         new HtmlWebpackPlugin({
-            filename : "grid.html",
-            template: path.join(__dirname, 'pages/grid.html')
+            filename : "grid-view.html",
+            template: path.join(__dirname, 'pages/grid-view.html')
+        }),
+        new HtmlWebpackPlugin({
+            filename : "theme-example.html",
+            template: path.join(__dirname, 'pages/theme-example.html')
         }),
     ],
     module: {

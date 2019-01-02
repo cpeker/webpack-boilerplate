@@ -59,3 +59,15 @@
       @include __iterateGrid(-xs);
     }
 }
+
+
+@mixin color($property, $theme_label) {
+    
+    $map: map-get($theme-colors, $theme_label);
+
+    @each $theme_name in map-keys($map) {
+        .theme-#{$theme_name} & {
+            #{$property} : map-get($map, $theme_name)
+        }
+    }
+  }

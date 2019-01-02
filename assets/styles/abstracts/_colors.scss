@@ -1,1 +1,14 @@
 $card-background-color : #eee;
+
+$theme-colors: (
+  'button__background': (
+    'light': #ff0,
+    'dark': #000,
+    'navy': #273677
+  ),
+  'button__color': (
+    'light': #000,
+    'dark': #fff,
+    'navy': #fff
+  )
+);

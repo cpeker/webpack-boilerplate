@@ -1,0 +1,10 @@
+.card {
+    background: $card-background-color;
+    display: inline-block;
+    width: 100%;
+    @extend %p_a--xs;
+    @extend %m_a--xs;
+    &__image {
+        width:100%;
+    }
+}

@@ -1,0 +1,61 @@
+
+@mixin generateSpacing($alignment, $direction) {
+    $key : null;
+    @if $alignment == "margin" {
+        $key : "m"
+    }
+    @if $alignment == "padding" {
+        $key : "p"
+    }
+
+    %#{$key}_#{$direction} {
+        @each $spacing in map-keys($spacingBase) {
+            &--#{$spacing} {
+                @if $direction == "v" {
+                    #{$alignment}: map-get($spacingBase, $spacing) 0;
+                }
+                @else if $direction == "h" {
+                    #{$alignment}: 0 map-get($spacingBase, $spacing);
+                }
+                @else {
+                    #{$alignment}: map-get($spacingBase, $spacing);
+                }
+            }
+        }
+    }
+}
+
+@mixin generateTextAligns {
+    @each $alignment in center, left, right {
+        .text-#{$alignment} {
+          text-align: $alignment
+        }
+      }
+}
+
+@mixin generateHeadings {
+    @each $header, $size in (h1: 32px, h2: 24px, h3: 18px, h4 : 16px, h5 : 14px, h6 : 12px) {
+        #{$header} {
+          font-size: $size;
+        }
+      }
+}
+
+@mixin __iterateGrid($unit) {
+    @for $i from 1 through 12 {
+        &.split#{$unit}-#{$i} { column-count: $i; }
+      }
+}
+
+@mixin splitGrid {
+
+    @include __iterateGrid(null);
+
+    @media all and (max-width:768px) {
+      @include __iterateGrid(-sm);
+    }
+
+    @media all and (max-width:480px) {
+      @include __iterateGrid(-xs);
+    }
+}

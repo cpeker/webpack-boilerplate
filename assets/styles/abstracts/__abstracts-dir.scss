@@ -1,3 +1,16 @@
+@import "_variables";
 @import "_fonts";
 @import "_mixins";
-@import "_variables";
+@import "_colors";
+
+
+@include generateSpacing("padding", "v");
+@include generateSpacing("padding", "h");
+@include generateSpacing("padding", "a");
+
+@include generateSpacing("margin", "v");
+@include generateSpacing("margin", "h");
+@include generateSpacing("margin", "a");
+
+@include generateTextAligns();
+@include generateHeadings();

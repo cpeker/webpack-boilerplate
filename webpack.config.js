@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const dirNode = 'node_modules';
 const dirApp = path.join(__dirname, 'app');
 const dirAssets = path.join(__dirname, 'assets');
+const dirPages = path.join(__dirname, 'pages');
 
 const html = {
     "title" : "Writing Scalable, Modular and Themeable CSS with SASS Exercises",
@@ -19,15 +20,21 @@ module.exports = {
         modules: [
             dirNode,
             dirApp,
-            dirAssets
+            dirAssets,
+            dirPages
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
+            filename : "index.html",
             template: path.join(__dirname, 'index.ejs'),
             title: html.title,
             welcome : html.welcome
-        })
+        }), 
+        new HtmlWebpackPlugin({
+            filename : "grid.html",
+            template: path.join(__dirname, 'pages/grid.html')
+        }),
     ],
     module: {
         rules: [
